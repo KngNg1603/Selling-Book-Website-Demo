@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/casso-mascot-logo.png">
+    <title>Good Luck</title>
+
+    <style>
+        .thumbnail.selected {
+            opacity: 1 !important;
+        }
+    </style>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <header>
+        <nav class='bg-green-500 text-white p-3'>
+            <div class='container mx-auto flex justify-start items-center'>
+                <a href="/" class='text-2xl font-semibold pr-10'>Good Luck</a>
+                <ul class='flex gap-x-5 items-center'>
+                    <li class=""><a href="/" class="px-3 py-3 rounded-lg hover:bg-green-600">Trang chủ</a></li>
+                    <li class=""><a href="/" class="px-6 py-3 rounded-lg hover:bg-green-600">Liên hệ</a></li>
+                    <li>
+                        <form action="/" method="get" class="flex items-center gap-x-1">
+                            <input type="text" name="q" placeholder="Tìm kiếm..." class="px-4 py-1 rounded-lg w-[500px]">
+                            <button type="submit" class="border px-3 py-1 bg-green-500 rounded-lg hover:bg-green-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav> 
+    </header>
+
+    <div class='flex justify-center h-screen mx-10 mt-5 rounded-lg'>  
+        <div class="flex justify-between gap-x-3 w-full">
+            <div class="w-2/5 bg-white rounded-lg flex flex-col items-center">
+                <img id="mainImage" class='w-[250px] h-[350px] p-1' src="./assets/bi_mat_cua_may_man.jpg" alt="Bi mat cua may man" />
+    
+                <div class="flex gap-x-3 mt-3">
+                    <img class='thumbnail w-[50px] h-auto opacity-50 selected' src="./assets/bi_mat_cua_may_man.jpg" />
+                    <img class='thumbnail w-[50px] h-auto opacity-50' src="./assets/bmmm_1.jpg" />
+                    <img class='thumbnail w-[50px] h-auto opacity-50' src="./assets/bmmm_2.jpg" />
+                    <img class='thumbnail w-[50px] h-auto opacity-50' src="./assets/bmmm_3.jpg" />
+                </div>
+            </div>
+
+            <div class="flex justify-start p-5 w-3/5 bg-white rounded-lg"> 
+                <div>
+                    <h1 class="text-base font-semibold">Tác giả: <span class="font-normal">Alex Rovira</span></h1>
+                    <h1 class="text-xl font-semibold">Bí mật của may mắn</h1>
+                    <div class="text-yellow-500 text-xl">
+                        <p class="font-semibold inline text-black text-base">5.0</p>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <p class="inline text-black text-base">(4)</p>
+                    </div>
+                    <p>Danh mục: <span class="text-black">Tâm lý - Kỹ năng sống</span></p>
+                    <p>Giá: <span class="text-red-500 text-xl font-semibold">10.000đ</span></p> 
+
+                    <br>
+                    <p>Câu chuyện trong Bí mật của May mắn hấp dẫn như câu chuyện thần thoại với những chân lý thực tế và vĩnh hằng của cuộc sống, mang lại cho người đọc, niềm tin, hy vọng, những trải nghiệm quý báu, đồng thời lý giải tại sao một số người luôn gặp được may mắn trong khi những người khác lại không gặp. Cuốn sách đã mang đến cho độc giả một cái nhìn thú vị và sâu sắc về thay đổi những điều kiện cần thiết để tạo ra và duy trì sự may mắn trong cuộc đời chúng ta. Độc giả khắp mọi nơi đã chú tâm thưởng thức, chuyền tay cho bè bạn và mỗi người đều mua nhiều bản để tặng cho gia đình, người thân, đồng nghiệp như những món quà đặc biệt của sự may mắn.</p>
+                    <br>
+                    <form action="/create-payment-link" method="post" class='text-center mb-5'>
+                        <button class='bg-green-500 hover:bg-green-600 px-3 py-2 rounded-lg text-white font-semibold text-[18px]'
+                        >
+                        Mua sách
+                        </button>
+                    </form>
+                    <p class="text-gray-500">*Lưu ý: Đây là sản phẩm e-book nên sau khi bạn hoàn tất thanh toán chúng tôi sẽ gửi đường link quyển sách cho bạn.</p>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script>
+    const mainImage = document.getElementById('mainImage');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            mainImage.src = this.src;
+            thumbnails.forEach(thumb => thumb.classList.remove('selected'));
+            this.classList.add('selected');
+        });
+    });
+</script>
+
+</html>
