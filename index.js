@@ -1,13 +1,14 @@
+require('dotenv').config();
 const express = require('express');
 const PayOS = require('@payos/node');
 const fs = require('fs');
 const path = require('path');
 
-const payos = new PayOS(
-    'e682260b-0fcf-4b3d-bf4c-95c66681c569', 
-    '7d445452-a61e-45e2-a71a-9d29b3ad0d8c', 
-    'cdffa17bb649ae161aa5fc9f27e192d8c58f0f66d717b7bb197fae5e93501b23'
-);
+const clientID = process.env.CLIENT_ID;
+const apiKey = process.env.API_KEY;
+const checkSumKey = process.env.CHECKSUM_KEY;
+
+const payos = new PayOS(clientID, apiKey, checkSumKey);
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
@@ -29,8 +30,6 @@ app.post('/create-payment-link', async (req, res) => {
     res.redirect(303, paymentLink.checkoutUrl);
 })
 
-// webhook-url https using ngrok
-// https://535b-2402-800-6344-d9c-60bb-b48f-460d-2370.ngrok-free.app/receive-hook
 app.post('/receive-hook', async (req, res) => {
     console.log(req.body);
     res.json();
