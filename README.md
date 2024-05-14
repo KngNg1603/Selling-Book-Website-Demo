@@ -14,3 +14,4 @@ npm run dev
 ```
 
 * You must create a payOS account first, then create a .env file and copy the information from payOS as shown in the .env.example file in order to run this project.
+* If you are unable to access the payment page, please go to the orderCode.txt file and change the current number to a larger one.
