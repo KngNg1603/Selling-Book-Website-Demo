@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/2421762.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Good Luck</title>
 
     <style>
@@ -16,28 +17,42 @@
 </head>
 <body class="bg-gray-100">
     <header>
-        <nav class='bg-green-500 text-white p-3'>
-            <div class='container mx-auto flex justify-start items-center'>
+        <nav class='bg-green-500 text-white py-3'>
+            <div class='container mx-auto flex justify-between items-center'>
                 <a href="/" class='text-2xl font-semibold pr-10'>Good Luck</a>
-                <ul class='flex gap-x-5 items-center'>
-                    <li class=""><a href="/" class="px-3 py-3 rounded-lg hover:bg-green-600">Trang chủ</a></li>
-                    <li class=""><a href="/" class="px-6 py-3 rounded-lg hover:bg-green-600">Liên hệ</a></li>
+                <ul class='flex gap-x-5 items-center justify-start'>
+                    <li><a href="/" class="px-3 py-3 rounded-lg hover:bg-green-600">Trang chủ</a></li>
+                    <li><a href="/" class="px-6 py-3 rounded-lg hover:bg-green-600">Liên hệ</a></li>
+                </ul>
+                <ul class='flex gap-x-5 items-center justify-between'>
                     <li>
                         <form action="/" method="get" class="flex items-center gap-x-1">
                             <input type="text" name="q" placeholder="Tìm kiếm..." class="px-4 py-1 rounded-lg w-[500px]">
                             <button type="submit" class="border px-3 py-1 bg-green-500 rounded-lg hover:bg-green-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-6 w-6 text-white">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                </svg>
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
+                    </li>   
+                </ul>
+
+                <ul class='flex gap-x-5 items-center justify-between'>
+                    <li>
+                        <a href="/" class="px-3 py-3 rounded-lg hover:bg-green-600 flex items-center gap-x-2">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class="px-3 py-3 rounded-lg hover:bg-green-600 flex items-center gap-x-2">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
                     </li>
                 </ul>
             </div>
         </nav> 
     </header>
 
-    <div class='flex justify-center h-screen mx-10 mt-5 rounded-lg'>  
+    <div class='flex justify-center mx-10 mt-5 rounded-lg'>  
         <div class="flex justify-between gap-x-3 w-full">
             <div class="w-2/5 bg-white rounded-lg flex flex-col items-center">
                 <img id="mainImage" class='w-[250px] h-[350px] p-1' src="./assets/bi_mat_cua_may_man.jpg" alt="Bi mat cua may man" />
